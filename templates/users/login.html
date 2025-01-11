@@ -10,6 +10,19 @@
 {% block content %}
 <div class="login">
     <h1>Welcome to our system</h1>
-    <p>Login form here</p>
+    <form method="post">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button class="btn btn-primary">Login</button>
+    </form>
+
+    <hr>
+
+    <label class="question">Don't have an account?</label>
+    <label class="signup-link">Click <a href="{% url 'signup' %}">here to sign up</a> </label>
 </div>
+
+
 {% endblock %}
